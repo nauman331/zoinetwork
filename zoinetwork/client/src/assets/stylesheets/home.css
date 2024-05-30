@@ -1,0 +1,167 @@
+:root {
+	--d: 2500ms;
+	--angle: 90deg;
+	--gradX: 100%;
+	--gradY: 50%;
+	--c1: #EEFEBF;
+	--c2: rgba(160, 181, 185, 0.1);
+}
+
+
+
+.home-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.home-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.nav-text {
+    width: 50%;
+}
+
+.home-nav figure {
+    width: 10%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.home-nav figure img {
+    width: 80%;
+    height: 80%;
+    background-color: #EEFEBF;
+    border-radius: 100px;
+}
+
+.logout-link {
+    background-color: #fafafa;
+    color: #2E4621;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: .2rem .4rem;
+    margin-left: -.3rem;
+}
+
+.carousel {
+   height: 150px;
+   width: 300px;
+   border-radius: 10px;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    --border-angle: 0turn;
+    --main-bg: conic-gradient(from var(--border-angle), #213, #112 5%, #112 60%, #213 95%);
+    border: solid 2px transparent;
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+    background: var(--main-bg) padding-box, var(--gradient-border) border-box, var(--main-bg) border-box;
+    background-position: center center;
+    animation: bg-spin 3s linear infinite;
+}
+@keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+  @property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
+  
+
+.carousel-item {
+    border-radius: 10px;
+    background-color: #EEFEBF;
+    color: #2E4621;
+    height: 96%;
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+}
+.home-icons {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    height: 250px;
+    border: 0.15rem solid;
+    flex-wrap: wrap;
+    gap: .1rem;
+    border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.5turn, var(--c1) 0.5turn, var(--c2) 0.25turn) 30;
+	animation: borderRotate var(--d) linear infinite forwards;
+}
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 90deg;
+    inherits: true;
+  }
+  
+  @property --gradX {
+    syntax: '<percentage>';
+    initial-value: 50%;
+    inherits: true;
+  }
+  
+  @property --gradY {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: true;
+    
+  }
+  @keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+      
+	}
+}
+.home-icons .home-icon{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    background-color: #fafafa;
+    color: #2E4621;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.home-icons .home-icon:hover {
+    color: #fafafa;
+    background-color: #2E4621;
+    border: 2px solid #fafafa;
+}
+.reffer-banner img{
+    width: 350px;
+    height: 100px;
+    margin-top: 1.5rem;
+    border-radius: 10px;
+}
+
+@media (min-width: 600px) {
+    .home-icons {
+        width: 400px;
+    }
+}

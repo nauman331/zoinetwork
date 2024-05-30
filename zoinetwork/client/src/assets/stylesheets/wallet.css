@@ -1,0 +1,105 @@
+.wallet-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.wallet-section .wallet-name {
+    background-color: #EEFEBF;
+    color: #2E4621;
+    width: 100%;
+    padding-top: 1rem;
+    text-align: center;
+}
+.top-wallet-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #EEFEBF;
+    border-radius: 0px 0px 50px 50px;
+    color: #2E4621;
+    padding: 5rem;
+}
+.top-wallet-container-left, .top-wallet-container-right {
+    width: 40%;
+    line-height: 40px;
+}
+.top-wallet-container-right figure img{
+height: 70%;
+width: 70%;
+
+}
+
+.top-wallet-container .wallet-above {
+    position: absolute;
+    height: 150px;
+    width: 80%;
+    bottom: -20%;
+    background-color: #fafafa;
+    border-radius: 10px;
+    padding: .2rem;  
+    text-align: center;
+    
+}
+
+.wallet-above-first {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    padding: 1rem;
+}
+
+.wallet-above .wallet-above-left, .wallet-above-left {
+    width: 40%;
+}
+
+.wallet-above .wallet-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+}
+.wallet-above .wallet-buttons button {
+    background-color: #2E4621;
+    color: #EEFEBF;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+}
+.wallet-above .wallet-buttons button .fa-sign-in {
+    transform: rotate(90deg);
+}
+.wallet-above .wallet-buttons button .fa-sign-out {
+    transform: rotate(-90deg);
+}
+
+.asset {
+    background-color: #EEFEBF;
+    color: #2E4621;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    padding: .2rem 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+.asset figure img {
+    width: 50px;
+    height: 50px;
+}
+.asset .coins {
+    display: flex;
+    background-color: #EEFEBF;
+    color: #2E4621;
+}
+@media (max-width: 768px) {
+    .top-wallet-container .wallet-above {
+        left: 10%;
+    }
+    .top-wallet-container .wallet-above {
+        bottom: -30%;
+    }
+}
