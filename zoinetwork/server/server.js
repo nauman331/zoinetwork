@@ -12,7 +12,7 @@ var cors = require('cors');
 dotenv.config()
 
 corsOptions = {
-    origin: "http://localhost:5173",
+    origin: "http://zoinetwork.vercel.app",
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD"
 }
 
