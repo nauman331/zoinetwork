@@ -11,7 +11,7 @@ const Login = () => {
     const navigate = useNavigate();
     const {storetokenInLS} = useAuth();
 
-    const URL = 'http://localhost:5000/api/auth/login'
+    const URL = 'https://zoinetwork-api.vercel.app/api/auth/login'
 
     const [user, setUser] = useState({
         email : "",
