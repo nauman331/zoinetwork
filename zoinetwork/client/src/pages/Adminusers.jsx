@@ -16,7 +16,7 @@ const Adminusers = () => {
 
     const DeleteUser = async (id) => {
        try {
-        const response = await fetch(`http://localhost:5000/api/admin/users/delete/${id}`, {
+        const response = await fetch(`https://zoinetwork-api.vercel.app/api/admin/users/delete/${id}`, {
             method: "POST",
             headers: {
                 Authorization: authorizationToken,
@@ -35,7 +35,7 @@ const Adminusers = () => {
 
     const getAllusers = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/admin/users", {
+            const response = await fetch("https://zoinetwork-api.vercel.app/api/admin/users", {
                 method: "GET",
                 headers: {
                     Authorization: authorizationToken,
