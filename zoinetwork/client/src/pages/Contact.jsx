@@ -34,7 +34,7 @@ if(userData && user){
   setUserData(false)
 }
 
-const URL = "http://localhost:5000/api/form/contact"
+const URL = "https://zoinetwork-api.vercel.app/api/form/contact"
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
