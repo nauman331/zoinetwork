@@ -45,7 +45,7 @@ const Mining = () => {
 
        
         try {
-            const response = await fetch('http://localhost:5000/api/auth/updateCoins', {
+            const response = await fetch('https://zoinetwork-api.vercel.app/api/auth/updateCoins', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
