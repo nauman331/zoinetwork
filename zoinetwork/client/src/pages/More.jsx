@@ -16,7 +16,7 @@ const More = () => {
 
     const handleClaimCoins = async (platform) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/auth/claim-coins/${platform}`, {
+            const response = await fetch(`https://zoinetwork-api.vercel.app/api/auth/claim-coins/${platform}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
