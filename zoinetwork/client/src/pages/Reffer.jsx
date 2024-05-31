@@ -2,7 +2,7 @@ import "../assets/stylesheets/Reffer.css"
 import { useAuth } from "../store/auth"
 import { Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import refferbanner from "../assets/images/reffer-banner.jpg"
+import refferbanner from "../assets/images/reffer-banner.png"
 import gift from "../assets/images/gift.svg"
 
 

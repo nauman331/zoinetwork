@@ -6,12 +6,14 @@
     margin-top: 1rem;
     text-align: center;
     padding: 0% .3rem;
+    color: #216AD9;
 }
 
 .reffer-code {
     background-color: #fafafa;
+   border: 2px solid #216AD9;
     padding: 1rem;
-    color: #2E4621;
+    color: #216AD9;
     width: 90%;
     border-radius: 10px;
     margin-top: 2rem;
@@ -23,13 +25,12 @@
 }
 .copy-button {
     padding: .5rem 1rem;
-    background-color: #2E4621;
+    background-color: #216AD9;
     color: #fafafa;
     border-radius: 100px;
 }
-@media (min-width: 768px) {
+
     .reffer-code figure img {
         width: 300px;
         height: 300px;
     }  
-}

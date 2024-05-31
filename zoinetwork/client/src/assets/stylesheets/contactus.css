@@ -77,7 +77,7 @@
   }
   
   .contact_us .responsive-cell-block.wk-desk-7.wk-ipadp-8.wk-tab-12.wk-mobile-12 {
-    background-color: #EEFEBF;
+    background-color: #216AD9;
     padding-top: 30px;
     padding-right: 50px;
     padding-bottom: 30px;
@@ -85,7 +85,7 @@
   }
   
   .contact_us .text-blk.heading {
-    color: #2E4621;
+    color: #fafafa;
     font-size: 35px;
     line-height: 48px;
     font-weight: 800;
@@ -132,11 +132,11 @@
     margin-right: 0px;
     margin-bottom: 10px;
     margin-left: 0px;
-     color: #2E4621;
+     color: #fafafa;
   }
   
   .contact_us .submit {
-     color: #2E4621;
+     color: #fafafa;
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
@@ -150,8 +150,8 @@
     background-attachment: initial;
     background-origin: initial;
     background-clip: initial;
-    background-color: #2E4621;
-    color: #EEFEBF;
+    background-color: #fafafa;
+    color: #216AD9;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;

@@ -1,17 +1,19 @@
 .authform {
-    background-color: #EEFEBF;
-    color: #2E4621;
+    background-color: #fafafa;
+    box-shadow:  -5px -5px 12px #c1c1c1,
+             5px 5px 12px #ffffff;
+    color: #216AD9;
     position: fixed;
     left: 0%;
     bottom: 0%;
     right: 0%;
-    height: 600px;
+    height: 610px;
     border-radius: 50px 50px 0px 0px;
     padding: 3rem;
 }
 
 .authform .form-input {
-    border: 2px solid #2E4621;
+    border: 2px solid #216AD9;
     background-color: #fafafa;
     margin-top: 1rem;
     height: 3rem;
@@ -26,7 +28,7 @@
     outline: none;
     width: 90%;
     background-color: transparent;
-    color: #2E4621;
+    color: #216AD9;
 }
 
 .authform .form-input i {
@@ -34,8 +36,9 @@
 }
 
 .authform button {
-    background-color: #2E4621;
-    color: #EEFEBF;
+    background-color: #216AD9;
+    color: #fafafa;
+    
     width: 100%;
     border-radius: 10px;
     height: 3rem;
@@ -45,13 +48,14 @@
 }
 
 .authform .link-text {
-    border: 2px solid #2E4621;
-    background-color: #EEFEBF;
+    border: 2px solid #216AD9;
+    background-color: #fafafa;
+    
 }
 
 .authform a {
     text-decoration: none;
-    color: #2E4621;
+    color: #216AD9;
 }
 .fa-eye, .fa-eye-slash{
     cursor: pointer;

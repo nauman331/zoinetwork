@@ -15,8 +15,8 @@
 }
 .admin-section .admin-nav .admin-link {
     text-decoration: none;
-    background-color: #EEFEBF;
-    color: #2E4621;
+    background-color: #216AD9;
+    color: #fafafa;
     padding: .5rem 1rem;
     border-radius: 10px;
 }
@@ -37,17 +37,17 @@
   }
   
   .table th {
-    background-color: #2E4621;
+    background-color: #216AD9;
     color: #fafafa;
   }
   
   .table tbody tr:nth-child(even) {
-    background-color: #EEFEBF;
-    color: #2E4621;
+    background-color: #216AD9;
+    color: #fafafa;
   }
   .table tbody tr:nth-child(odd) {
     background-color: #fafafa;
-    color: #2E4621;
+    color: #216AD9;
   }
   .delete-button{
     background-color: red;

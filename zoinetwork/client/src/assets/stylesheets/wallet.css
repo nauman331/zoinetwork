@@ -3,10 +3,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    color: #216AD9;
 }
 .wallet-section .wallet-name {
-    background-color: #EEFEBF;
-    color: #2E4621;
+    background-color: #216AD9;
+    color: #fafafa;
     width: 100%;
     padding-top: 1rem;
     text-align: center;
@@ -17,9 +18,9 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background-color: #EEFEBF;
+    background-color: #216AD9;
     border-radius: 0px 0px 50px 50px;
-    color: #2E4621;
+    color: #fafafa;
     padding: 5rem;
 }
 .top-wallet-container-left, .top-wallet-container-right {
@@ -38,17 +39,20 @@ width: 70%;
     width: 80%;
     bottom: -20%;
     background-color: #fafafa;
+    color: #216AD9;
     border-radius: 10px;
     padding: .2rem;  
     text-align: center;
-    
+    box-shadow:  5px 5px 12px #c1c1c1,
+             0px 0px 0px #ffffff;
+
 }
 
 .wallet-above-first {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #216AD9;
     padding: 1rem;
 }
 
@@ -63,8 +67,8 @@ width: 70%;
     padding-top: 1rem;
 }
 .wallet-above .wallet-buttons button {
-    background-color: #2E4621;
-    color: #EEFEBF;
+    background-color: #216AD9;
+    color: #fafafa;
     padding: .5rem 1rem;
     border-radius: 10px;
 }
@@ -76,8 +80,7 @@ width: 70%;
 }
 
 .asset {
-    background-color: #EEFEBF;
-    color: #2E4621;
+    background-color: #216AD9;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -92,8 +95,9 @@ width: 70%;
 }
 .asset .coins {
     display: flex;
-    background-color: #EEFEBF;
-    color: #2E4621;
+    background-color: #216AD9;
+    color: #fafafa;
+    border: none;
 }
 @media (max-width: 768px) {
     .top-wallet-container .wallet-above {

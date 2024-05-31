@@ -5,6 +5,8 @@
     justify-content: center;
     flex-direction: column;
     padding: 2rem;
+    margin-top: 3rem;
+    color: #216AD9;
 }
 
 .getstartsection figure img {
@@ -22,19 +24,19 @@
 
 .getstartsection .getstart {
     width: 50%;
-    background-color: #EEFEBF;
+    background-color: #216AD9;
     height: 50px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #2E4621;
+    color: #fafafa;
     margin-top: 5rem;
 }
 
 @media (max-width: 768px) {
-    figure img {
+    .getstartsection figure img {
         height: 100%;
         width: 100%;
         margin-left: 0%;

@@ -12,8 +12,7 @@
 body {
     height: 100%;
     width: 100%;
-    background-color: #2E4621;
-    color: #EEFEBF;
+    background-color: #fafafa;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,4 +22,7 @@ body {
 button {
   border: none;
   cursor: pointer;
+}
+a {
+  color: black;
 }

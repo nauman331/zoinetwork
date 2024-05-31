@@ -11,11 +11,12 @@ header {
     height: 50px;
 }
 header nav {
-    background-color: #EEFEBF;
+    background-color: #fafafa;
     width: 80%;
     height: 100%;
     border-radius: 100px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
+    box-shadow:  -5px -5px 10px #b9b9b9,
+             5px 5px 10px #ffffff;
 
 }
 header nav ul {
@@ -36,22 +37,22 @@ header nav ul li {
 }
 
 header nav ul li .nav-link{
-    color: #2E4621;
+    color: #216AD9;
     font-size: larger;
 }
 header nav ul li:hover
 {
-    border: 2px solid #2E4621;   
+    border: 2px inset #216AD9;   
 }
 .coins{
-background-color: #2E4621;
-border: 2px solid#EEFEBF ;
+background-color: #216AD9;
+border: 2px solid #fafafa ;
 border-radius: 100px;
 width: 70%;
 height: 70%;
 }
 .fa-coins {
-    color: #EEFEBF;
+    color: #fafafa;
 }
 @media (max-width: 768px) {
     header{

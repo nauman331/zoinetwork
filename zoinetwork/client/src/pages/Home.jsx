@@ -1,6 +1,6 @@
 import { useAuth } from "../store/auth"
 import hello from "../assets/images/hello.svg"
-import refferbanner from "../assets/images/reffer-banner.jpg"
+import refferbanner from "../assets/images/reffer-banner.png"
 import "../assets/stylesheets/getstart.css"
 import { NavLink } from "react-router-dom";
 import "../assets/stylesheets/home.css"

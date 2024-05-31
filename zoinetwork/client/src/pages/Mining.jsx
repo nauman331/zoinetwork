@@ -30,13 +30,13 @@ const Mining = () => {
             setClicks(clicks + 1);
         }
 
-        setSize({ size: 0.9 });
-        setFive({ opacity: 1, y: -50, size: 1.5 });
+        setSize({ size: 0.7 });
+        setFive({ opacity: 1, y: 0, size: 0.5 });
 
         setTimeout(() => {
             setSize({ size: 1 });
-            setFive({ opacity: 0, y: 0, size: 1 });
-        }, 500);
+            setFive({ opacity: 0, y: -50, size: 1 });
+        }, 200);
 
         updateCoins();
         
@@ -70,12 +70,12 @@ const Mining = () => {
                         style={{ transform: size.size.interpolate(size => `scale(${size})`) }}
                         onClick={handleClick}
                     />
-                    <animated.h1 style={{ position: 'absolute', top:"20%", opacity: showFive.opacity, transform: showFive.y.interpolate(y => `translate3d(0, ${y}px, 0) scale(${showFive.size})`) }}>5+</animated.h1>
+                    <animated.h1 style={{ position: 'absolute', top:"20%", opacity: showFive.opacity, transform: showFive.y.interpolate(y => `translate3d(0, ${y}px, 0) scale(${showFive.size})`) }}>zoi +5</animated.h1>
                 </figure>
-                     <h4>Do not worry we are regularly adding your</h4>
-                     <h4>coins in our database you will see it after </h4>
-                     <h4>verification or simply you can refesh to see </h4>
-                     <h4>all of your coins.This is all because to keep our system pure.</h4>
+                     <h4>Do not worry we are regularly adding your
+                     coins in our database you will see it after 
+                     verification or simply you can refesh to see 
+                     all of your coins.This is all because to keep our system pure.</h4>
             </section>
         </>
     );

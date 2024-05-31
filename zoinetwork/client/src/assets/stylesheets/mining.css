@@ -5,9 +5,15 @@
     flex-direction: column;
     width: 100%;
     margin-top: 5rem;
+    color: #216AD9;
 }
+
 .mining-section h1{
     margin-top: 1rem;
+}
+.mining-section h4 {
+    width: 300px;
+    text-align: center;
 }
 .mining-section figure{
     margin-top: 3rem;

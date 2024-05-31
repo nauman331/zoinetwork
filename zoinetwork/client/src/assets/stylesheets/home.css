@@ -3,8 +3,8 @@
 	--angle: 90deg;
 	--gradX: 100%;
 	--gradY: 50%;
-	--c1: #EEFEBF;
-	--c2: rgba(160, 181, 185, 0.1);
+	--c1: #216AD9;
+	--c2: rgba(160, 160, 185, 0.1);
 }
 
 
@@ -23,6 +23,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
+    color: #216AD9;
 }
 
 .nav-text {
@@ -42,13 +43,13 @@
 .home-nav figure img {
     width: 80%;
     height: 80%;
-    background-color: #EEFEBF;
+    background-color: #fafafa;
+    border: 2px solid #216AD9;
     border-radius: 100px;
 }
 
 .logout-link {
     background-color: #fafafa;
-    color: #2E4621;
     text-align: center;
     border-radius: 5px;
     text-decoration: none;
@@ -58,15 +59,14 @@
 
 .carousel {
    height: 150px;
-   width: 300px;
-   border-radius: 10px;
+   width: 350px;
     margin-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     --border-angle: 0turn;
-    --main-bg: conic-gradient(from var(--border-angle), #213, #112 5%, #112 60%, #213 95%);
+    --main-bg: conic-gradient(from var(--border-angle), #fafafa, #fafafa 5%, #fafafa 60%, #fafafa 95%);
     border: solid 2px transparent;
     --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
     background: var(--main-bg) padding-box, var(--gradient-border) border-box, var(--main-bg) border-box;
@@ -87,8 +87,8 @@
 
 .carousel-item {
     border-radius: 10px;
-    background-color: #EEFEBF;
-    color: #2E4621;
+    background-color: #216AD9;
+    color: #fafafa;
     height: 96%;
     width: 98%;
     display: flex;
@@ -103,7 +103,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 90%;
+    width: 350px;
     height: 250px;
     border: 0.15rem solid;
     flex-wrap: wrap;
@@ -135,12 +135,18 @@
       
 	}
 }
+.home-icons .home-icon i{
+    border: 2px solid #216AD9;
+    padding: .8rem;
+    border-radius: 100px;
+    color: #216AD9;
+}
 .home-icons .home-icon{
     display: flex;
     width: 100px;
     height: 100px;
     background-color: #fafafa;
-    color: #2E4621;
+    color: #216AD9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,20 +154,12 @@
     border-radius: 10px;
     text-decoration: none;
 }
-.home-icons .home-icon:hover {
+.home-icons .home-icon i:hover {
     color: #fafafa;
-    background-color: #2E4621;
-    border: 2px solid #fafafa;
+    background-color: #216AD9;
 }
 .reffer-banner img{
     width: 350px;
-    height: 100px;
+    height: 150px;
     margin-top: 1.5rem;
-    border-radius: 10px;
-}
-
-@media (min-width: 600px) {
-    .home-icons {
-        width: 400px;
-    }
 }

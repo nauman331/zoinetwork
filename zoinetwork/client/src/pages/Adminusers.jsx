@@ -75,10 +75,10 @@ const Adminusers = () => {
                                 <tr key={index}>
                                     <td data-label="S.No">{index}</td>
                                     <td data-label="Name">{item.username}</td>
-                                    <td data-label="Age">{item.email}</td>
-                                    <td data-label="Marks%">{item.phone}</td>
-                                    <td data-label="Marks%">{item.refferals}</td>
-                                    <td data-label="Marks%">{item.coins}</td>
+                                    <td data-label="Email">{item.email}</td>
+                                    <td data-label="Phone Number">{item.phone}</td>
+                                    <td data-label="Refferals">{item.refferals}</td>
+                                    <td data-label="Coins">{item.coins}</td>
                                     <td data-label="Status"><button className="delete-button"
                                     onClick={() => DeleteUser(item._id)}
                                     >Delete</button></td>

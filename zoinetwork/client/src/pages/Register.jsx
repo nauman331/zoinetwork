@@ -78,8 +78,8 @@ setUser({
     return (
         <>
             <section className="form-section">
-                <h1 style={{textAlign: 'center', marginTop:'1rem'}}>ZOI Network Platform</h1>
-                <h5 style={{textAlign: 'center'}}>A future crypto coin</h5>
+                <h1 style={{textAlign: 'center', marginTop:'1rem', color:'#216AD9'}}>ZOI Network Platform</h1>
+                <h5 style={{textAlign: 'center', color:'#216AD9'}}>A future crypto coin</h5>
 
                 <form onSubmit={HandleSubmit}  className="authform">
 

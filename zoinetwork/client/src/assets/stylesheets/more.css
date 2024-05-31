@@ -4,6 +4,7 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
+    color: #216AD9;
 }
 .more-section .more-header {
     margin-top: 1rem;
@@ -11,7 +12,7 @@
     width: 100px;
     background-color: #fafafa;
     border-radius: 100px;
-    color: #2E4621;
+    color: #216AD9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,6 +20,10 @@
     flex-direction: column;
     font-weight: bolder;
     font-size: larger;
+    border: 2px solid #216AD9;
+}
+.social-media i{
+    color: #216AD9;
 }
 .social-media {
     margin-top: 2rem;
@@ -32,20 +37,22 @@
     padding: 0% 1rem;
 }
 .social-media .social-link{
-    background-color: #EEFEBF;
+    background-color: #fafafa;
     width: 100%;
-    color: #2E4621;
+    color: #216AD9;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: .5rem;
     border-radius: 10px;
+    box-shadow:  5px 5px 4px #c1c1c1,
+             -5px -5px 4px #ffffff;
 }
 .logout-button {
-    background-color: #fafafa;
+    background-color: #216AD9;
     text-decoration: none;
     width: 100%;
-    color: #2E4621;
+    color: #fafafa;
     padding: .5rem;
     border-radius: 10px;
 }
