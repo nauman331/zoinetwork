@@ -25,7 +25,7 @@ const Wallet = () => {
 
                 <div className="top-wallet-container-right">
                     <figure>
-                        <img src={profile} alt="..." />
+                        <img src={profile} alt="..." style={{border:'2px solid #fafafa', borderRadius:'100px'}}/>
                     </figure>
                 </div>
 
