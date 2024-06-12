@@ -84,7 +84,7 @@ const register = async (req, res, next) => {
             const htmlTemplate = readEmailTemplate();
             const template = htmlTemplate.replace('{{username}}', username);
             const mailOptions = {
-                from: process.env.EMAIL_USER,
+                from: "zoinetwork00@gmail.com",
                 to: email,
                 subject: `Welcome ${username}😎 to ZOI Network!`,
                 html: template,
