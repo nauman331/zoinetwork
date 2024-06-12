@@ -100,25 +100,31 @@ const register = async (req, res, next) => {
 
 
 
-        // Send welcome email
-        const sended = await sendWelcomeEmail(email, username)
-        if (!sended) {
-            return res.status(400).json({ msg: "Invalid Email Address" });
-        } else {
-              // Create a new user
-        const createdUser = await User.create({
-            email: normalizedEmail,
-            phone,
-            password,
-            username,
+       // Send welcome email
+const sended = await sendWelcomeEmail(email, username)
+if (!sended) {
+    return res.status(400).json({ msg: "Invalid Email Address" });
+} else {
+    // Create a new user
+    const createdUser = await User.create({
+        email: normalizedEmail,
+        phone,
+        password,
+        username,
+    });
+
+    if (createdUser) {
+        res.status(200).json({
+            msg: 'Registration successful',
+            token: await createdUser.generateAuthToken(),
+            userId: createdUser._id.toString(),
         });
-            
-            res.status(200).json({
-                msg: 'Registration successful',
-                token: await createdUser.generateAuthToken(),
-                userId: createdUser._id.toString(),
-            });
-        }
+    } else {
+        // Handle user creation failure
+        console.error('Error creating user');
+    }
+}
+
 
     } catch (error) {
         // Log any errors
