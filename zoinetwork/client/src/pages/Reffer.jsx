@@ -21,6 +21,9 @@ if(!isLoggedIn){
         <section className="reffer-section">
             <h1>Your Community</h1>
             <p>Invite your friends to join the community and earn rewards.</p>
+            <figure className="reffer-banner">
+                            <img src={refferbanner} alt="..." style={{borderRadius: "10px"}}/>
+                        </figure>
             <div className="reffer-code">
                 <h3>Total Refferals: {user.refferals}</h3>
                 <figure>
@@ -38,10 +41,6 @@ if(!isLoggedIn){
                     toast.success("Reffer code copied Successfully")
                 }}>Copy </button>
             </div>
-
-            <figure className="reffer-banner">
-                            <img src={refferbanner} alt="..." />
-                        </figure>
         </section>
         </>
     )

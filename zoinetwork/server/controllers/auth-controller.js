@@ -61,15 +61,6 @@ const register = async (req, res, next) => {
 
 
 
-        // Create a new user
-        const createdUser = await User.create({
-            email: normalizedEmail,
-            phone,
-            password,
-            username,
-        });
-
-
         // Read the HTML email template
         const readEmailTemplate = () => {
             const templatePath = path.join(__dirname, '../index.html');
@@ -108,13 +99,25 @@ const register = async (req, res, next) => {
 
 
         // Send welcome email
-        await sendWelcomeEmail(email, username);
-
-        res.status(200).json({
-            msg: 'Registration successful',
-            token: await createdUser.generateAuthToken(),
-            userId: createdUser._id.toString(),
+        const sended = await sendWelcomeEmail(email, username)
+        if (!sended) {
+            return res.status(400).json({ msg: "Invalid Email Address" });
+        } else {
+              // Create a new user
+        const createdUser = await User.create({
+            email: normalizedEmail,
+            phone,
+            password,
+            username,
         });
+            
+            res.status(200).json({
+                msg: 'Registration successful',
+                token: await createdUser.generateAuthToken(),
+                userId: createdUser._id.toString(),
+            });
+        }
+
     } catch (error) {
         // Log any errors
         console.error('Error during registration:', error);
