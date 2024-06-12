@@ -2,6 +2,8 @@ const User = require('../models/user-model')
 const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
+const Queue = require('bull');
+const claimCoinsQueue = new Queue('claim coins');
 
 
 
@@ -190,8 +192,8 @@ const updateCoins = async (req, res, next) => {
     }
 };
 
-const claimSocialCoins = async (req, res, next) => {
 
+const claimSocialCoins = async (req, res, next) => {
     try {
         const userId = req.userID;
         const user = await User.findById(userId);
@@ -202,12 +204,13 @@ const claimSocialCoins = async (req, res, next) => {
 
         const platform = req.params.platform;
         if (!user.coinsClaimed[platform]) {
-            // Add 500 coins to the user's account
-            user.coins += 1000;
-            user.coinsClaimed[platform] = true;
-            await user.save();
+            // Schedule a job to add coins to the user's account 12 hours later
+            claimCoinsQueue.add({
+                userId: req.userID,
+                platform: req.params.platform
+            }, { delay: 12 * 60 * 60 * 1000 });  // 12 hours delay
 
-            return res.status(200).json({ message: 'Coins claimed successfully' });
+            return res.status(200).json({ message: 'Coins will be added after 12 hours' });
         } else {
             return res.status(400).json({ message: `Coins already claimed from ${platform}` });
         }
@@ -215,8 +218,23 @@ const claimSocialCoins = async (req, res, next) => {
         console.error(error);
         res.status(500).json({ message: 'Internal server error' });
     }
-
 }
+
+// Process the jobs
+claimCoinsQueue.process(async () => {
+    const userId = req.userID;
+    const user = await User.findById(userId);
+    if (!user) {
+        throw new Error('User not found');
+    }
+
+    if (!user.coinsClaimed[platform]) {
+        user.coins += 1000;
+        user.coinsClaimed[platform] = true;
+        await user.save();
+    }
+});
+
 
 
 module.exports = { home, register, login, user, updateCoins, claimSocialCoins };
