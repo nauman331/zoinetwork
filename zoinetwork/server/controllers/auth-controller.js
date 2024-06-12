@@ -61,7 +61,12 @@ const register = async (req, res, next) => {
 
         const normalizedEmail = normalizeEmail(email);
 
-
+        const createdUser = await User.create({
+            email: normalizedEmail,
+            phone,
+            password,
+            username,
+        });
 
         // Read the HTML email template
         const readEmailTemplate = () => {
@@ -84,7 +89,7 @@ const register = async (req, res, next) => {
             const htmlTemplate = readEmailTemplate();
             const template = htmlTemplate.replace('{{username}}', username);
             const mailOptions = {
-                from: "zoinetwork00@gmail.com",
+                from: process.env.EMAIL_USER,
                 to: email,
                 subject: `Welcome ${username}😎 to ZOI Network!`,
                 html: template,
@@ -100,31 +105,18 @@ const register = async (req, res, next) => {
 
 
 
-       // Send welcome email
-const sended = await sendWelcomeEmail(email, username)
-if (!sended) {
-    return res.status(400).json({ msg: "Invalid Email Address" });
-} else {
-    // Create a new user
-    const createdUser = await User.create({
-        email: normalizedEmail,
-        phone,
-        password,
-        username,
-    });
-
-    if (createdUser) {
-        res.status(200).json({
-            msg: 'Registration successful',
-            token: await createdUser.generateAuthToken(),
-            userId: createdUser._id.toString(),
-        });
-    } else {
-        // Handle user creation failure
-        console.error('Error creating user');
-    }
-}
-
+        // Send welcome email
+         await sendWelcomeEmail(email, username)
+        
+          
+       
+            
+            res.status(200).json({
+                msg: 'Registration successful',
+                token: await createdUser.generateAuthToken(),
+                userId: createdUser._id.toString(),
+            });
+        
 
     } catch (error) {
         // Log any errors
