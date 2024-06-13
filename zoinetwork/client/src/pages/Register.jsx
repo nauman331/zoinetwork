@@ -53,7 +53,7 @@ try {
         storetokenInLS(res_data.token, `${res_data.token}Hello`)
         navigate('/')
     }else{
-        toast.error("Email or phone number is already choosen")
+        toast.error(res_data.extraDetails ? res_data.extraDetails : res_data.msg)
     }
     console.log(response);
 } catch (error) {

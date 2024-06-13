@@ -45,7 +45,7 @@ try {
         storetokenInLS(res_data.token)
         navigate('/');
     }else {
-        toast.error("Invalid Email or password")
+        toast.error(res_data.extraDetails ? res_data.extraDetails : res_data.msg)
     }
 } catch (error) {
     toast.error("invalid credentials", error);

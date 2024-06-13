@@ -72,7 +72,8 @@ const Mining = () => {
                     />
                     <animated.h1 style={{ position: 'absolute', top:"20%", opacity: showFive.opacity, transform: showFive.y.interpolate(y => `translate3d(0, ${y}px, 0) scale(${showFive.size})`) }}>zoi +5</animated.h1>
                 </figure>
-                     <h4>Do not worry we are regularly adding your
+                     <h4>You are earning 5 zoi coins per click 
+                        Do not worry we are regularly adding your
                      coins in our database you will see it after 
                      verification or simply you can refesh to see 
                      all of your coins.This is all because to keep our system pure.</h4>

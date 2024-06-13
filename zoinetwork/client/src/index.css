@@ -26,3 +26,6 @@ button {
 a {
   color: black;
 }
+::selection {
+  background-color: transparent;
+}
