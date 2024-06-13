@@ -5,6 +5,12 @@ const path = require('path');
 const Queue = require('bull');
 const claimCoinsQueue = new Queue('claim coins');
 
+const readEmailTemplate = () => {
+    const templatePath = path.join(__dirname, '../index.html');
+    return fs.readFileSync(templatePath, 'utf-8');
+};
+
+
 
 
 //email security
