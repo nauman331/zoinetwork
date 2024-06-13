@@ -53,7 +53,20 @@ const register = async (req, res, next) => {
             await referrer.save();
         }
 
+
+
+
+
+
+
         const normalizedEmail = normalizeEmail(email);
+
+        const createdUser = await User.create({
+            email: normalizedEmail,
+            phone,
+            password,
+            username,
+        });
 
         // Read the HTML email template
         const readEmailTemplate = () => {
@@ -85,41 +98,32 @@ const register = async (req, res, next) => {
             try {
                 await transporter.sendMail(mailOptions);
                 console.log('Email sent successfully!');
-                return true;
             } catch (error) {
                 console.error('Error sending email:', error);
-                return false;
             }
         };
 
+
+
         // Send welcome email
-        const emailSent = await sendWelcomeEmail(email, username)
+         await sendWelcomeEmail(email, username)
         
-        if (emailSent) {
-            const createdUser = await User.create({
-                email: normalizedEmail,
-                phone,
-                password,
-                username,
-            });
+          
+       
             
             res.status(200).json({
                 msg: 'Registration successful',
                 token: await createdUser.generateAuthToken(),
                 userId: createdUser._id.toString(),
             });
-        } else {
-            res.status(500).json({
-                msg: 'Registration failed',
-            });
-        }
+        
+
     } catch (error) {
         // Log any errors
         console.error('Error during registration:', error);
         next(error);
     }
 };
-
 
 //Login Controller
 const login = async (req, res, next) => {
