@@ -1,5 +1,5 @@
 import "../assets/stylesheets/mining.css"
-import zoicoin from "../assets/images/zoi-coin.png"
+import zoicoin from "../assets/images/zoicoin.svg"
 import { useSpring, animated } from 'react-spring';
 import { useLocalStorage } from 'react-use';
 import { useAuth } from "../store/auth";

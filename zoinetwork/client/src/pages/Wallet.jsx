@@ -1,6 +1,6 @@
 import "../assets/stylesheets/wallet.css"
 import profile from "../assets/images/profile.svg"
-import zoicoin from "../assets/images/zoi-coin.png"
+import zoicoin from "../assets/images/zoicoin.svg"
 import usdt from "../assets/images/usdt.png"
 import { useAuth } from "../store/auth";
 import { Navigate } from "react-router-dom";
