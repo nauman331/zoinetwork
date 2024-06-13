@@ -5,12 +5,6 @@ const path = require('path');
 const Queue = require('bull');
 const claimCoinsQueue = new Queue('claim coins');
 
-const readEmailTemplate = () => {
-    const templatePath = path.join(__dirname, '../index.html');
-    return fs.readFileSync(templatePath, 'utf-8');
-};
-
-
 
 
 //email security
@@ -30,47 +24,7 @@ const home = (req, res) => {
         next(error)
     }
 }
-//Register Controller with email
-const sendWelcomeEmail = async (email, username) => {
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        secure: true,
-        port: 465,
-        auth: {
-            user: 'zoinetwork00@gmail.com',
-            pass: 'qayg suop gkrv ahga',
-        },
-    });
-
-    const htmlTemplate = readEmailTemplate();
-    const template = htmlTemplate.replace('{{username}}', username);
-    const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: email,
-        subject: `Welcome ${username}😎 to ZOI Network!`,
-        html: template,
-    };
-
-    try {
-        await transporter.sendMail(mailOptions);
-        console.log('Email sent successfully!');
-
-        // Create the user after the email has been sent
-        const normalizedEmail = normalizeEmail(email);
-        const createdUser = await User.create({
-            email: normalizedEmail,
-            phone,
-            password,
-            username,
-        });
-
-        return createdUser;
-    } catch (error) {
-        console.error('Error sending email:', error);
-        throw error; // Throw the error so it can be caught in the outer try-catch
-    }
-};
-
+//Register Controller
 const register = async (req, res, next) => {
     try {
         const { email, phone, password, username, reffercode } = req.body;
@@ -99,21 +53,77 @@ const register = async (req, res, next) => {
             await referrer.save();
         }
 
-        // Send welcome email and create user
-        const createdUser = await sendWelcomeEmail(email, username);
 
-        res.status(200).json({
-            msg: 'Registration successful',
-            token: await createdUser.generateAuthToken(),
-            userId: createdUser._id.toString(),
+
+
+
+
+
+        const normalizedEmail = normalizeEmail(email);
+
+        const createdUser = await User.create({
+            email: normalizedEmail,
+            phone,
+            password,
+            username,
         });
+
+        // Read the HTML email template
+        const readEmailTemplate = () => {
+            const templatePath = path.join(__dirname, '../index.html');
+            return fs.readFileSync(templatePath, 'utf-8');
+        };
+
+        // Send welcome email
+        const sendWelcomeEmail = async (email, username) => {
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                secure: true,
+                port: 465,
+                auth: {
+                    user: 'zoinetwork00@gmail.com',
+                    pass: 'qayg suop gkrv ahga',
+                },
+            });
+
+            const htmlTemplate = readEmailTemplate();
+            const template = htmlTemplate.replace('{{username}}', username);
+            const mailOptions = {
+                from: process.env.EMAIL_USER,
+                to: email,
+                subject: `Welcome ${username}😎 to ZOI Network!`,
+                html: template,
+            };
+
+            try {
+                await transporter.sendMail(mailOptions);
+                console.log('Email sent successfully!');
+            } catch (error) {
+                console.error('Error sending email:', error);
+            }
+        };
+
+
+
+        // Send welcome email
+         await sendWelcomeEmail(email, username)
+        
+          
+       
+            
+            res.status(200).json({
+                msg: 'Registration successful',
+                token: await createdUser.generateAuthToken(),
+                userId: createdUser._id.toString(),
+            });
+        
+
     } catch (error) {
         // Log any errors
         console.error('Error during registration:', error);
         next(error);
     }
 };
-
 
 //Login Controller
 const login = async (req, res, next) => {
